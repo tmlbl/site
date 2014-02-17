@@ -1,6 +1,20 @@
 doctype
 html
   head
-    title Corporation Enterprises
+    title node?
+    link(rel='stylesheet' type='text/css' href='public/css/main.css')
+    link(rel='stylesheet' type='text/css' href='public/css/pretty.css')
   body
-    h1 Welcome
+    h1 !!
+    div.code
+      pre.prettyprint
+        | /* A multiline 
+        | comment */
+        | var x = 34;
+        | console.log(x); // hilight
+        | function Make () {
+        |   return 'Hello, World!';
+        | }
+        | var babe = function (param) { return script; };
+script(src='https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=js')
+script(src='//localhost:35729/livereload.js')
