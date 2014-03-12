@@ -1,0 +1,15 @@
+doctype
+html
+  head
+    title node?
+    link(rel='stylesheet' type='text/css' href='public/css/main.css')
+    link(rel='stylesheet' type='text/css' href='public/css/pretty.css')
+  body
+    include _header.jade
+    h1 My Blog
+    .container
+      each post in posts
+        h1= post.title
+        p= post.body
+        a(href='/posts/' + post._id) View Comments
+    include _footer.jade

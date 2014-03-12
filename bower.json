@@ -1,0 +1,19 @@
+{
+  "name": "site",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tmlbl/site",
+  "description": "Portfolio site for me, Tim Lebel",
+  "authors": [
+    "Tim Lebel"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

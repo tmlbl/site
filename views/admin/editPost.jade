@@ -1,0 +1,21 @@
+doctype
+html
+  head
+    title node?
+  body
+    include _header.jade
+    h1 Make a Post
+    .container
+      form(id='postform' method='post' action='/posts/create')
+        .form-group
+          label(for='title') Post Title
+          input(id='post-title' type='text' name='title')
+        .form-group
+          label(for='url') Url
+          input(id='live-url' type='text' name='url')
+        .form-group
+          label(for='body') Post Body
+          textarea.textarea-lg(id='post-body' type='text' name='body' style='resize: none;')
+        .form-group
+          button.submit(type='submit') Submit
+    include _footer.jade
