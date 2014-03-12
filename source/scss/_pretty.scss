@@ -38,6 +38,10 @@ pre {
 
 pre.prettyprint {
   display: block;
-  background-color: #141414;
+  background-color: $dark_gray;
   border: none !important;
-  margin: 0.5em; }
+  margin: 2em; 
+  padding: 2%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }

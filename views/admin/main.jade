@@ -6,6 +6,10 @@ html
     link(rel='stylesheet' type='text/css' href='public/css/pretty.css')
   body
     include _header.jade
-    h1 Welcome Back
-    a(href='/posts/create') Make a post
+    .container
+      h1 Welcome Back
+      a(href='/posts/create') Make a post
+    each post in posts
+      .container
+        a(href='/posts/edit/' + post.url)= post.title
     include _footer.jade

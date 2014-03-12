@@ -51,7 +51,11 @@ module.exports = function (grunt) {
 				options: {
 					livereload: true
 				}
-			}
+			},
+      server: {
+        files: ['index.js'],
+        tasks: ['express:dev']
+      }
 		},
     browserify: {
       lib: {

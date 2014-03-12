@@ -4,18 +4,49 @@ html
     title node?
   body
     include _header.jade
-    h1 Make a Post
-    .container
-      form(id='postform' method='post' action='/posts/create')
-        .form-group
-          label(for='title') Post Title
-          input(id='post-title' type='text' name='title')
-        .form-group
-          label(for='url') Url
-          input(id='live-url' type='text' name='url')
-        .form-group
-          label(for='body') Post Body
-          textarea.textarea-lg(id='post-body' type='text' name='body' style='resize: none;')
-        .form-group
-          button.submit(type='submit') Submit
+    if post
+      .container
+        h1 Edit Post
+      .container
+        form(id='postform' method='post' action=('/posts/' + post.url))
+          .form-group
+            label {
+          .form-group
+            label(for='title') post_title:
+            input(id='post-title' type='text' name='title' value=post.title)
+          .form-group
+            label(for='url') url:
+            input(id='live-url' type='text' name='url' value=post.url)
+          .form-group
+            label(for='body') post_body:
+          .form-group.form-group-lg
+            textarea.textarea-lg(id='post-body' type='text' name='body' style='resize: none;')=post.body
+          .form-group
+            label }
+          .form-group
+            button.submit(type='submit') submit
+        form(id='deleteform' method='post' action=('/posts/' + post.url + '/delete'))
+          input(id='live-url' type='text' name='url' value=post.url style='display:none')
+          button.submit(type='submit') DELETE
+    else
+      .container
+        h1 Make a Post
+      .container
+        form(id='postform' method='post' action='/posts/create')
+          .form-group
+            label {
+          .form-group
+            label(for='title') post_title:
+            input(id='post-title' type='text' name='title')
+          .form-group
+            label(for='url') url:
+            input(id='live-url' type='text' name='url')
+          .form-group
+            label(for='body') post_body:
+          .form-group.form-group-lg
+            textarea.textarea-lg(id='post-body' type='text' name='body' style='resize: none;')
+          .form-group
+            label }
+          .form-group
+            button.submit(type='submit') submit
     include _footer.jade

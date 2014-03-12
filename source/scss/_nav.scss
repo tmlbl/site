@@ -1,0 +1,35 @@
+.navbar {
+  background-color: $dark_gray;
+  padding: 2%;
+  margin: 0 auto;
+}
+
+.nav-select {
+  float: right;
+  font-size: 1.2rem;
+  color: $soft_gray;
+  border: none;
+  padding: 1%;
+  background-color: $mid_gray;
+}
+
+.nav-title {
+  font-size: 2rem;
+  color: $beige;
+  text-decoration: none;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.fl {
+  display: inline;
+  float: left;
+}

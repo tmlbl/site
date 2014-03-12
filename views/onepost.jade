@@ -1,0 +1,21 @@
+doctype
+html
+  head
+    title node?
+  body
+    include _header.jade
+    .container
+      h1= post.title
+      h6= post.postdate
+      p.post-body !{post.body}
+    .container
+      a add comment
+      .comment-form
+        input(type='text' placeholder='name')
+        textarea(placeholder='type whatever you want...')
+    each comment in post.comments
+      .container
+        p= comment.name
+        p= comment.body
+        p= comment.postdate
+    include _footer.jade

@@ -1,0 +1,36 @@
+.form-group > label {
+  color: $soft_gray;
+  font-size: 1.5rem;
+  font-family: $monospace;
+  font-weight: bold;
+}
+
+.form-group {
+  padding: 3%;
+}
+
+.form-group-lg {
+  height: 500px;
+}
+
+.textarea-lg {
+  width: 100%;
+  background-color: $soft_gray;
+}
+
+.form-group > input {
+  float: right;
+  background-color: $soft_gray;
+  border: none;
+  font-family: $monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 60%;
+  padding: 1%;
+}
+
+.submit {
+  border: none;
+  font-family: $monospace;
+  padding: 7px;
+}

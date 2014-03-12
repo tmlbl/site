@@ -1,4 +1,32 @@
-div {
+body {
   background-color: $dark_gray;
-  padding: 1em;
-  border-radius: 10px; }
+  font-family: $mainfont;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  background-color: $mid_gray;
+  padding: 1.5em;
+  border-radius: 1px;
+  color: $soft_gray;
+  margin: 1em;
+}
+
+.textarea-lg {
+  height: 100%;
+}
+
+.rounded {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.post-link {
+  float: right;
+}

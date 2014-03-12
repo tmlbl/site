@@ -6,6 +6,8 @@ $(document).ready(function () {
     $('#post-title').keyup(function (e) {
       var title = $('#post-title').val();
       title = title.toLowerCase();
+      title = title.replace(/\W/g, ' ');
+      title = title.replace(/\s\s/g, ' ');
       title = title.split(' ');
       if (title.length < 6) {
         title = title.join('-');
