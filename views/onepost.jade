@@ -11,11 +11,16 @@ html
     .container
       a add comment
       .comment-form
-        input(type='text' placeholder='name')
-        textarea(placeholder='type whatever you want...')
+        form(id='postform' method='post' action=('/posts/' + post.url + '/comments'))
+          .row
+            input.comment-name(type='text' placeholder='title' name='author')
+          .row
+            textarea.comment-body(placeholder='type whatever you want...' name='body')
+          .row
+            button.submit.comment-submit(type='submit' name='submit') Submit
     each comment in post.comments
       .container
-        p= comment.name
-        p= comment.body
-        p= comment.postdate
+        h4= comment.author
+        pre.prettyprint= comment.body
+        h5= comment.postdate
     include _footer.jade

@@ -23,7 +23,8 @@ app.configure(function () {
 });
 
 /* Import controllers */
-var PostControl = require('./controllers/post.js');
+var PostControl = require('./controllers/post.js'),
+  CommentControl = require('./controllers/comment.js');
 
 /* Define routes */
 
@@ -74,8 +75,11 @@ app.get('/posts/edit/:url', function (req, res) {
 app.post('/posts/create', PostControl.create);
 app.get('/posts/:url', PostControl.getOne);
 app.post('/posts/:url', PostControl.update);
-app.post('/posts/:url/delete', PostControl.delete)
+app.post('/posts/:url/delete', PostControl.delete);
 app.get('/posts', PostControl.getAll);
+
+/* Comment CRUD routes */
+app.post('/posts/:url/comments', CommentControl.create);
 
 /* Server will start on 5000 locally, or on environment port on Heroku */
 var port = process.env.PORT || 5000;
