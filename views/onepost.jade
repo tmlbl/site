@@ -5,8 +5,8 @@ html
   body
     include _header.jade
     .container
-      h1= post.title
-      h6= post.postdate
+      h1.post-title= post.title
+      h6.post-date= post.postdate
       p.post-body !{post.body}
     .container
       a add comment

@@ -4,16 +4,13 @@ html
     title node?
   body
     include _header.jade
-    .container
-      h1.page-title 
-       a(href='/blog') My Blog
     each post in posts
       .container
         a(href='/posts/' + post.url)  
           h1.post-title= post.title
         h6.post-date= post.postdate
         p.post-body !{post.body}
-        a.post-link(href='/posts/' + post.url) View Comments
+        //a.post-link(href='/posts/' + post.url) View Comments
     .container
       a(href='/blog/' + (parseInt(pagenum) + 1)) next page
     include _footer.jade

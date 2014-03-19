@@ -9,9 +9,49 @@ a {
   font-weight: bold;
 }
 
+.terminal {
+  background-color: $dark_gray;
+  padding: 5%;
+}
+
+.terminal > .prompt {
+  margin: 5%;
+}
+
+#search {
+  border: none;
+  outline: none;
+  background-color: $dark_gray;
+  font-family: $mainfont;
+  color: $soft_gray;
+  font-size: 0.9em;
+}
+
+.post-list {
+  padding-left: 5%;
+  display: block;
+  margin: 2%;
+  padding-top: 3%;
+  background-color: $mid_gray;
+  padding-bottom: 3%;
+}
+
+.dkcontainer {
+  background-color: black;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  color: $soft_gray;
+  margin: 1em;
+}
+
+.console {
+  font-family: $monospace;
+}
+
 .container {
   background-color: $mid_gray;
-  padding: 1.5em;
+  padding: 2em;
   border-radius: 1px;
   color: $soft_gray;
   margin: 1em;
@@ -29,4 +69,14 @@ a {
 
 .post-link {
   float: right;
+  color: $soft_gray;
+}
+
+.post-title {
+  color: $soft_gray;
+}
+
+.post-date {
+  color: $space_purp;
+  font-size: 0.8rem;
 }

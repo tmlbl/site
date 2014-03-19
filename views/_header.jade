@@ -1,7 +1,14 @@
 link(rel='stylesheet' type='text/css' href='/public/build/styles.css')
+link(href='http://fonts.googleapis.com/css?family=Duru+Sans' rel='stylesheet' type='text/css')
+link(href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css')
 .navbar.cf.rounded
-  a.nav-title.fl(href='/') tmlbl
-  select.nav-select(default='posts')
-    option(value='posts') blog
-    option(value='newpost') about
-    option(value='logout') portfolio
+  a.nav-title.fl(href='/blog') t m l b l
+  ul.nav-select(default='posts')
+    li(value='posts') 
+      a(href='/blog') blog
+    li(value='about')
+      a(href='/about') about
+    li(value='search')
+      a(href='/search') search
+    li(value='portfolio')
+      a(href='/portfolio') portfolio

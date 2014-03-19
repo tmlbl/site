@@ -5,6 +5,8 @@ var express = require('express'),
   _ = require('lodash'),
 	app = express();
 
+require('newrelic');
+
 /* Set up the database and import models */
 mongoose.connect('mongodb://localhost/blog', function (err, res) {
   if (err) {
@@ -27,6 +29,28 @@ var PostControl = require('./controllers/post.js'),
   CommentControl = require('./controllers/comment.js');
 
 /* Define routes */
+/* Simple navigation routes */
+app.get('/', function (req, res) {
+  res.redirect('/blog');
+});
+
+app.get('/about', function (req, res) {
+  res.render('about');
+});
+
+app.get('/search', function (req, res) {
+  PostControl.Post.find({ }, function (err, posts) {
+    posts = _.sortBy(posts, function (post) { 
+      return post.postdate; 
+    }, Date);
+    posts = posts.reverse();
+    res.render('search', { posts: posts });
+  });
+});
+
+app.get('/portfolio', function (req, res) {
+  res.render('portfolio');
+});
 
 /* For /blog render the 3 most recent posts */
 app.get('/blog', function (req, res) {

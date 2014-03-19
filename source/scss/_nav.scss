@@ -12,10 +12,17 @@
   background-color: $mid_gray;
 }
 
+.nav-select > li {
+  display: inline-block;
+  padding: 20px;
+}
+
 .nav-title {
-  font-size: 2rem;
-  color: $beige;
+  font-size: 4rem;
+  padding: 35px;
+  color: $soft_gray;
   text-decoration: none;
+  font-family: $monospace;
 }
 
 .cf:before,
