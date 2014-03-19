@@ -1,0 +1,16 @@
+doctype
+html
+  head
+    title node?
+    link(rel='stylesheet' type='text/css' href='public/css/main.css')
+    link(rel='stylesheet' type='text/css' href='public/css/pretty.css')
+  body
+    include _header.jade
+    form(action='/login' method='POST')
+      .form-group
+        input(name='usr')
+      .form-group
+        input(name='pass')
+      .form-group
+        button.submit(type='submit') submit
+    include _footer.jade

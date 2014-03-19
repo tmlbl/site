@@ -15,7 +15,7 @@ a {
 }
 
 .terminal > .prompt {
-  margin: 5%;
+  margin: 1%;
 }
 
 #search {
@@ -24,7 +24,7 @@ a {
   background-color: $dark_gray;
   font-family: $mainfont;
   color: $soft_gray;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 .post-list {
@@ -51,7 +51,7 @@ a {
 
 .container {
   background-color: $mid_gray;
-  padding: 2em;
+  padding: 3em;
   border-radius: 1px;
   color: $soft_gray;
   margin: 1em;

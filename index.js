@@ -22,11 +22,23 @@ app.configure(function () {
 	app.set('views', __dirname + '/views'); // View folder is ./app/views/
 	app.use(express.bodyParser()); // Makes http bodies readable
 	app.use('/public', express.static(__dirname + '/public')); // Static dir is ./public
+  app.use(express.cookieParser('S3CRE7'));
+  app.use(express.session());
+  app.use(app.router);
 });
 
 /* Import controllers */
 var PostControl = require('./controllers/post.js'),
   CommentControl = require('./controllers/comment.js');
+
+/* Authentication middleware function */
+function checkAuth (req, res, next) {
+  if (req.session.user_id !== 'foobar') {
+    res.send('You are not authorized to view this page');
+  } else {
+    next();
+  }
+}
 
 /* Define routes */
 /* Simple navigation routes */
@@ -75,7 +87,7 @@ app.get('/blog/:pg', function (req, res) {
   });
 });
 
-app.get('/admin', function (req, res) {
+app.get('/admin', checkAuth, function (req, res) {
   PostControl.Post.find({ }, function (err, posts) {
     posts = _.sortBy(posts, function (post) { 
       return post.postdate; 
@@ -85,11 +97,24 @@ app.get('/admin', function (req, res) {
   });
 });
 
-app.get('/posts/create', function (req, res) {
+app.get('/login', function (req, res) {
+  res.render('admin/login');
+});
+
+app.post('/login', function (req, res) {
+  if (req.body.usr === 'tmlbl' && req.body.pass === 'correct horse battery staple') {
+    req.session.user_id = 'foobar';
+    res.redirect('/admin');
+  } else {
+    res.redirect('/');
+  }
+});
+
+app.get('/posts/create', checkAuth, function (req, res) {
   res.render('admin/editPost');
 });
 
-app.get('/posts/edit/:url', function (req, res) {
+app.get('/posts/edit/:url', checkAuth, function (req, res) {
   PostControl.Post.findOne({ 'url': req.params.url }, function (err, post) {
     res.render('admin/editPost', { post: post });
   });
