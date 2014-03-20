@@ -131,7 +131,7 @@ app.get('/posts', PostControl.getAll);
 app.post('/posts/:url/comments', CommentControl.create);
 
 /* Server will start on 5000 locally, or on environment port on Heroku */
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 80;
 
 app.listen(port, function () {
 	console.log('Listening on ' + port);
