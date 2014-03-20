@@ -7,7 +7,7 @@ html
     .container
       h1 Search All Posts
       .terminal
-        label.prompt root@tmlbl:~/posts$ grep
+        label.prompt root@tmlbl:~/posts# grep
         input#search
     each post in posts
       a.post-list(href='/posts/' + post.url)= post.title
