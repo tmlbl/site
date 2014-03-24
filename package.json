@@ -4,7 +4,7 @@
   "description": "Portfolio site for me, Tim Lebel",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mkdir -p build && grunt test --trace --verbose"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,8 @@
     "express": "~3.4.8",
     "jade": "~1.1.5",
     "mongoose": "^3.8.8",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "newrelic": "^1.4.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -36,8 +37,5 @@
     "superagent": "^0.17.0",
     "chai": "^1.9.0",
     "mocha": "^1.17.1"
-  },
-  "scripts": {
-    "test": "mkdir -p build && grunt test --trace --verbose"
   }
 }
