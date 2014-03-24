@@ -112,6 +112,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.registerTask('default', ['express:dev', 'watch', 'browserify:lib']);
-	grunt.registerTask('test', ['simplemocha', 'casper']);
+	grunt.registerTask('test', ['express:test', 'simplemocha', 'casper']);
   grunt.registerTask('build', ['sass', 'browserify']);
 };
