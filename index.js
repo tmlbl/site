@@ -22,7 +22,7 @@ app.configure(function () {
 	app.set('views', __dirname + '/views'); // View folder is ./app/views/
 	app.use(express.bodyParser()); // Makes http bodies readable
 	app.use('/public', express.static(__dirname + '/public')); // Static dir is ./public
-  app.use(express.cookieParser('S3CRE7'));
+  app.use(express.cookieParser('FJ4Hk99fhgu9t4ng4095ng053i5g5n'));
   app.use(express.session());
   app.use(app.router);
 });
