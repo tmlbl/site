@@ -50,9 +50,12 @@ a {
 }
 
 .container {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -khtml-border-radius: 8px;  
+  border-radius: 8px;
   background-color: $mid_gray;
   padding: 3em;
-  border-radius: 1px;
   color: $soft_gray;
   margin: 1em;
 }
