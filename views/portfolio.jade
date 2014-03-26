@@ -1,8 +1,21 @@
 doctype
 html
   head
-    title node?
+    title Tim Lebel | JavaScript Developer
   body
     include _header.jade
     .container
+      a(href='http://github.com/tmlbl/coinbase-auth')
+        h1 Coinbase-Auth ->
+      p 
+        | An npm module that takes care of
+        | the rather complex authentication
+        | process for Coinbase.com's secure
+        | API. After a security breach, Coinbase
+        | changed their merchant API to require
+        | HMAC authentication and nonce-ing for
+        | each request. I wrote this module to 
+        | abstract the authentication out of 
+        | an application I was creating, and 
+        | decided to release it publicly.
     include _footer.jade

@@ -80,3 +80,23 @@ a {
   color: $space_purp;
   font-size: 0.8rem;
 }
+
+.soc {
+  height: 125px;
+  width: 125px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -khtml-border-radius: 8px;  
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.img {
+  display: inline-block;
+  padding: 2%;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -khtml-border-radius: 8px;  
+  border-radius: 8px;
+  overflow: hidden;
+}
